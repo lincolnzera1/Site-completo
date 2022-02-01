@@ -1,0 +1,27 @@
+<div class="bg-light p-5 rounded-lg m-3">
+  <h1 class="display-4">Bem-vindo ao blog do Nó</h1>
+  <p class="lead">Um blog feito com Node.js</p>
+  <hr class="my-4">
+  <p>Faça parte da comunidade:</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Crie uma conta</a>
+</div>
+
+<hr>
+
+<h2>Postagens recentes:</h2>
+
+{{#each postagens}}
+<div class="card mt-4">
+    <div class="card-body">
+        <h3>{{titulo}}</h3>
+        <p>{{descricao}}</p>
+        <a href="/postagem/{{slug}}"><button type="submit" class="btn btn-success mt-4">Leia mais</button></a>
+        <hr>
+        <small>Categoria: {{categoria.nome}}</small>
+        <small>Data de publicação: {{data}}</small><br>
+        
+    </div>
+</div>
+{{else}}
+    <h5>Nenhuma postagem. =/</h5>
+{{/each}}

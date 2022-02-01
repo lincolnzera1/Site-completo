@@ -1,0 +1,21 @@
+<h2>Lista de postagens: </h2>
+<hr>
+<a href="/admin/postagens/add" ><button type="button" class="btn btn-success">Nova postagem</button></a> <!--Esse href pelo visto é pra ir pra rota dita, quando clicar no botao.-->
+
+
+
+{{#each postagens}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4>{{titulo}}</h4>
+            <p>Descrição: {{descricao}}</p>
+            <small>Categoria: {{categoria.nome}}</small>
+            <small><br> Data: {{data}}</small><br>
+            <a href="/admin/postagens/edit/{{_id}}"><button type="submit" class="btn btn-success mt-4">Editar postagem</button></a>
+            <a href="/admin/postagens/deletar/{{_id}}"><button type="submit" class="btn btn-success mt-4">Deletar postagem</button></a>
+        </div>
+    </div>
+{{else}}
+    <p>Nenhuma postagem registrada</p>
+    <h4>{{titulo}}</h4>
+{{/each}}
